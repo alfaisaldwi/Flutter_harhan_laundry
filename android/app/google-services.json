@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "871857586524",
+    "project_id": "harhanlaundry-58fdd",
+    "storage_bucket": "harhanlaundry-58fdd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871857586524:android:697f71be599f831ba78199",
+        "android_client_info": {
+          "package_name": "com.example.harhan_laundry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871857586524-9cntgtarcr5cc26pe22jmqiguepl3tit.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbFv85y_Gj6nlCZrH574w3XHaXjw3wk3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871857586524-9cntgtarcr5cc26pe22jmqiguepl3tit.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "871857586524-mh0t972pucsmhqs80fj4k5qh6e8u79e9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.harhanLaundry"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
