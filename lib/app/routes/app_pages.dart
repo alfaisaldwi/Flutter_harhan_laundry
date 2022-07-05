@@ -8,6 +8,8 @@ import 'package:harhan_laundry/app/modules/home/bindings/home_binding.dart';
 import 'package:harhan_laundry/app/modules/home/views/home_view.dart';
 import 'package:harhan_laundry/app/modules/login/bindings/login_binding.dart';
 import 'package:harhan_laundry/app/modules/login/views/login_view.dart';
+import 'package:harhan_laundry/app/modules/profile/bindings/profile_binding.dart';
+import 'package:harhan_laundry/app/modules/profile/views/profile_view.dart';
 import 'package:harhan_laundry/app/modules/user_home/bindings/user_home_binding.dart';
 import 'package:harhan_laundry/app/modules/user_home/views/user_home_view.dart';
 
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.USER_HOME,
       page: () => UserHomeView(),
       binding: UserHomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => ProfileView(),
+      binding: ProfileBinding(),
     ),
   ];
 }

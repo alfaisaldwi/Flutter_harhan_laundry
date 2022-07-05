@@ -27,9 +27,10 @@ class CreateUserController extends GetxController {
             "nama": namaC.text,
             "email": emailC.text,
             "uid": uid,
+            "role": "admin",
             "createdAt": DateTime.now().toIso8601String()
           });
-          
+
           await userCredential.user!.sendEmailVerification();
         }
 
