@@ -29,10 +29,12 @@ class ProfileView extends GetView<ProfileController> {
                   children: [
                     ClipOval(
                       child: Container(
-                        width: 100,
-                        height: 100,
+                        width: 90,
+                        height: 90,
                         child: Image.network(
-                            "https://ui-avatars.com/api/?name=${user['nama']}"),
+                          "https://ui-avatars.com/api/?name=${user['nama']}",
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     )
                   ],
@@ -44,6 +46,14 @@ class ProfileView extends GetView<ProfileController> {
                   '${user['nama'].toString().toUpperCase()}',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 20),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  '${user['email'].toString().toLowerCase()}',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 15),
                 ),
                 const SizedBox(
                   height: 20,
