@@ -1,59 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:harhan_laundry/app/data/model/Item_model.dart';
+import 'package:harhan_laundry/app/model/Item_model.dart';
 
-List<Item> Atasan = [
+List<Item> items = [
   Item(
-      name: 'Baju Kaos',
-      unit: 'Satuan',
-      price: 'Rp.5000',
-      image: 'assets/image/kaos.png'),
+      name: 'Travel Bag',
+      price: 50000,
+      image: 'assets/image/bag_treatment/travel_bag.png'),
   Item(
-      name: 'Baju Tidur',
-      unit: 'Satuan',
-      price: 'Rp.5000',
-      image: 'assets/image/baju_tidur.png'),
+      name: 'Mountain Bag',
+      price: 75000,
+      image: 'assets/image/bag_treatment/mountain.png'),
   Item(
-      name: 'Kemeja',
-      unit: 'Satuan',
-      price: 'Rp.8000',
-      image: 'assets/image/kemeja.png'),
+      name: 'Backpack Bag',
+      price: 30000,
+      image: 'assets/image/bag_treatment/backpack.png'),
   Item(
-      name: 'Jaket',
-      unit: 'Satuan',
-      price: 'Rp.10.000',
-      image: 'assets/image/jaket.png'),
-];
-List<Item> Underwear = [
+      name: 'Kids Bag',
+      price: 15000,
+      image: 'assets/image/bag_treatment/kids.png'),
   Item(
-      name: 'Celana Jeans',
-      unit: 'Satuan',
-      price: 'Rp.8000',
-      image: 'assets/image/jeans.jpg'),
+      name: 'Clutch',
+      price: 20000,
+      image: 'assets/image/bag_treatment/clutch.png'),
   Item(
-      name: 'Celana Training',
-      unit: 'Satuan',
-      price: 'Rp.8000',
-      image: 'assets/image/celana_training.png'),
-];
-List<Item> Aksesoris = [
+      name: 'Wallet Canvas',
+      price: 10000,
+      image: 'assets/image/bag_treatment/wallet_canvas.png'),
   Item(
-      name: 'Tas',
-      unit: 'Satuan',
-      price: 'Rp.10.000',
-      image: 'assets/image/tas.png'),
+      name: 'Wallet Leather',
+      price: 15000,
+      image: 'assets/image/bag_treatment/wallet_leather.png'),
   Item(
-      name: 'Sepatu',
-      unit: 'Satuan',
-      price: 'Rp.10.000',
-      image: 'assets/image/sepatu.png'),
+      name: 'Diaper Bag',
+      price: 45000,
+      image: 'assets/image/bag_treatment/deaper.png'),
+  Item(name: 'Cap', price: 20000, image: 'assets/image/bag_treatment/cap.png'),
   Item(
-      name: 'Sandal',
-      unit: 'Satuan',
-      price: 'Rp.10.000',
-      image: 'assets/image/sandal.png'),
+      name: 'Man Sandals Express',
+      price: 40000,
+      image: 'assets/image/sandal/mans_sandal.png'),
   Item(
-      name: 'Boneka',
-      unit: 'Satuan',
-      price: 'Rp.10.000',
-      image: 'assets/image/boneka.png'),
+      name: 'Man Sandals Regular',
+      price: 20000,
+      image: 'assets/image/sandal/mans_sandal.png'),
+  Item(
+      name: 'Woman Sandals Express',
+      price: 45000,
+      image: 'assets/image/sandal/women.png'),
+  Item(
+      name: 'Woman Sandals Regular',
+      price: 25000,
+      image: 'assets/image/sandal/women.png'),
+  Item(
+      name: 'Kids Sandals Express',
+      price: 25000,
+      image: 'assets/image/sandal/kids.png'),
+  Item(
+      name: 'Kids Sandal Regular',
+      price: 15000,
+      image: 'assets/image/sandal/kids.png'),
 ];

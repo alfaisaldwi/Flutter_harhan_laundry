@@ -7,7 +7,10 @@ import 'package:harhan_laundry/app/routes/app_pages.dart';
 class LoginController extends GetxController {
   RxBool isLoading = false.obs;
   TextEditingController emailC = TextEditingController();
-  TextEditingController passwordC = TextEditingController();
+  TextEditingController passwordC = TextEditingController(); 
+  var isHidden = true.obs;
+
+  void togglePasswordView() => isHidden.value = !isHidden.value;
 
   FirebaseAuth auth = FirebaseAuth.instance;
 

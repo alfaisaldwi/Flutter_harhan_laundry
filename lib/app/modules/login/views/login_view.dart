@@ -12,12 +12,13 @@ import '../controllers/login_controller.dart';
 class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
+    final cPW = Get.put(LoginController());
+
     return Scaffold(
-        body:
-        SingleChildScrollView(
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+        body: SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
           Container(
             transformAlignment: Alignment.center,
             child: Stack(
@@ -28,14 +29,18 @@ class LoginView extends GetView<LoginController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Harhan",
-                            style: GoogleFonts.poppins(
-                                fontSize: 40, fontWeight: FontWeight.bold)),
-                        Text('Laundry',
-                            style: GoogleFonts.poppins(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ))
+                        Image.asset(
+                          'assets/image/logo.png',
+                          width: 500,
+                        ),
+                        // Text("Harhan",
+                        //     style: GoogleFonts.poppins(
+                        //         fontSize: 40, fontWeight: FontWeight.bold)),
+                        // Text('Laundry',
+                        //     style: GoogleFonts.poppins(
+                        //       fontSize: 20,
+                        //       fontWeight: FontWeight.bold,
+                        //     ))
                       ],
                     ))
               ],
@@ -66,24 +71,32 @@ class LoginView extends GetView<LoginController> {
                 const SizedBox(
                   height: 20,
                 ),
-                TextField(
-                  autocorrect: false,
-                  controller: controller.passwordC,
-                  decoration: const InputDecoration(
-                      labelText: 'Password',
-                      prefixIcon: Icon(
-                        Icons.lock,
-                        color: Colors.black,
-                      ),
-                      labelStyle: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.green),
-                      )),
-                  obscureText: true,
-                ),
+                Obx(() => TextField(
+                      obscureText: cPW.isHidden.value,
+                      autocorrect: false,
+                      controller: controller.passwordC,
+                      decoration: InputDecoration(
+                          labelText: 'Password',
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: Colors.black,
+                          ),
+                          suffix: InkWell(
+                            onTap: cPW.togglePasswordView,
+                            child: Icon(
+                              cPW.isHidden.value
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                            ),
+                          ),
+                          labelStyle: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.green),
+                          )),
+                    )),
                 const SizedBox(
                   height: 10,
                 ),
@@ -140,8 +153,8 @@ class LoginView extends GetView<LoginController> {
               ],
             ),
           )
-              ],
-            ),
-        ));
+        ],
+      ),
+    ));
   }
 }

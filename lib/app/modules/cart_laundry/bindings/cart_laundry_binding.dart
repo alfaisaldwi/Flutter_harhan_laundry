@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../controllers/cart_laundry_controller.dart';
+import '../../../model/cart_laundry_controller.dart';
 
 class CartLaundryBinding extends Bindings {
   @override

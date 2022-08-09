@@ -2,12 +2,24 @@ import 'package:get/get.dart';
 
 import 'package:harhan_laundry/app/modules/admin_home/bindings/admin_home_binding.dart';
 import 'package:harhan_laundry/app/modules/admin_home/views/admin_home_view.dart';
+import 'package:harhan_laundry/app/modules/admin_kelola_laundry/bindings/admin_kelola_laundry_binding.dart';
+import 'package:harhan_laundry/app/modules/admin_kelola_laundry/views/admin_kelola_laundry_view.dart';
+import 'package:harhan_laundry/app/modules/admin_kelola_pelanggan/bindings/admin_kelola_pelanggan_binding.dart';
+import 'package:harhan_laundry/app/modules/admin_kelola_pelanggan/views/admin_kelola_pelanggan_view.dart';
+import 'package:harhan_laundry/app/modules/admin_laundry_update/bindings/admin_laundry_update_binding.dart';
+import 'package:harhan_laundry/app/modules/admin_laundry_update/views/admin_laundry_update_view.dart';
 import 'package:harhan_laundry/app/modules/cart_laundry/bindings/cart_laundry_binding.dart';
 import 'package:harhan_laundry/app/modules/cart_laundry/views/cart_laundry_view.dart';
+import 'package:harhan_laundry/app/modules/cart_screen/bindings/cart_screen_binding.dart';
+import 'package:harhan_laundry/app/modules/cart_screen/views/cart_screen_view.dart';
+import 'package:harhan_laundry/app/modules/catalog/bindings/catalog_binding.dart';
+import 'package:harhan_laundry/app/modules/catalog/views/catalog_view.dart';
 import 'package:harhan_laundry/app/modules/create_user/bindings/create_user_binding.dart';
 import 'package:harhan_laundry/app/modules/create_user/views/create_user_view.dart';
 import 'package:harhan_laundry/app/modules/home/bindings/home_binding.dart';
 import 'package:harhan_laundry/app/modules/home/views/home_view.dart';
+import 'package:harhan_laundry/app/modules/list_user/bindings/list_user_binding.dart';
+import 'package:harhan_laundry/app/modules/list_user/views/list_user_view.dart';
 import 'package:harhan_laundry/app/modules/login/bindings/login_binding.dart';
 import 'package:harhan_laundry/app/modules/login/views/login_view.dart';
 import 'package:harhan_laundry/app/modules/order_laundry/bindings/order_laundry_binding.dart';
@@ -67,10 +79,40 @@ class AppPages {
       page: () => StatusLaundryView(),
       binding: StatusLaundryBinding(),
     ),
+    // GetPage(
+    //   name: _Paths.CART_LAUNDRY,
+    //   page: () => CartLaundryView(),
+    //   binding: CartLaundryBinding(),
+    // ),
     GetPage(
-      name: _Paths.CART_LAUNDRY,
-      page: () => CartLaundryView(),
-      binding: CartLaundryBinding(),
+      name: _Paths.CATALOG,
+      page: () => Catalog(),
+      binding: CatalogBinding(),
+    ),
+    GetPage(
+      name: _Paths.CART_SCREEN,
+      page: () => CartScreenView(),
+      binding: CartScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.LIST_USER,
+      page: () => ListUserView(),
+      binding: ListUserBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADMIN_KELOLA_LAUNDRY,
+      page: () => AdminKelolaLaundryView(),
+      binding: AdminKelolaLaundryBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADMIN_KELOLA_PELANGGAN,
+      page: () => AdminKelolaPelangganView(),
+      binding: AdminKelolaPelangganBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADMIN_LAUNDRY_UPDATE,
+      page: () => AdminLaundryUpdateView(),
+      binding: AdminLaundryUpdateBinding(),
     ),
   ];
 }

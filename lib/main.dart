@@ -12,12 +12,14 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  
   runApp(
     StreamBuilder<User?>(
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             home: Scaffold(
                 body: Center(
               child: CircularProgressIndicator(),
@@ -26,6 +28,7 @@ void main() async {
         }
         print(snapshot.data);
         return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
           title: "Application",
           initialRoute: snapshot.data != null ? Routes.HOME : Routes.LOGIN,
           getPages: AppPages.routes,

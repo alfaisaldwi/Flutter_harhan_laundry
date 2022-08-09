@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:harhan_laundry/app/modules/admin_kelola_laundry/views/admin_kelola_laundry_view.dart';
+import 'package:harhan_laundry/app/modules/admin_kelola_pelanggan/views/admin_kelola_pelanggan_view.dart';
+import 'package:harhan_laundry/app/modules/list_user/views/list_user_view.dart';
 import 'package:harhan_laundry/app/routes/app_pages.dart';
 
 import '../controllers/admin_home_controller.dart';
@@ -64,12 +67,18 @@ class AdminHomeView extends GetView<AdminHomeController> {
                                   height: 20,
                                 ),
                                 ListTile(
-                                  title: Text('Kelola Laundry'),
-                                  trailing: Icon(Icons.arrow_forward_outlined),
-                                ),
+                                    title: Text('Kelola Laundry'),
+                                    trailing:
+                                        Icon(Icons.arrow_forward_outlined),
+                                    onTap: () {
+                                      Get.to(() => AdminKelolaLaundryView());
+                                    }),
                                 ListTile(
                                   title: Text('Daftar Pelanggan'),
                                   trailing: Icon(Icons.arrow_forward_outlined),
+                                  onTap: () {
+                                    Get.to(() => AdminKelolaPelangganView());
+                                  },
                                 ),
                                 ListTile(
                                   title: Text('Kembali ke Home'),

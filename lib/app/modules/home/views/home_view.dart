@@ -41,24 +41,25 @@ class HomeView extends GetView<HomeController> {
                       FeatureCard(
                           title: "Laundry",
                           text:
-                              "Daftarkan diri anda untuk memperoleh vaksinasi secara mudah di lokasi terdekat",
+                              "Lakukan transaksi laundry dengan mudah serta dapat melihat harga layanan laundry",
                           gradient1: Color.fromARGB(132, 151, 71, 255),
                           gradient2: Color.fromARGB(113, 23, 136, 188),
                           textColor: Color.fromARGB(255, 0, 0, 0),
                           press: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return OrderLaundryView();
-                                },
-                              ),
-                            );
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //     builder: (context) {
+                            //       return CatalogProducts();
+                            //     },
+                            //   ),
+                            // );
+                            Get.toNamed(Routes.CATALOG);
                           }),
                       FeatureCard(
                           title: "Cek Status Laundry",
                           text:
-                              "Setelah melakukan pendaftaran, silahkan cek no antrian disini.",
+                              "Setelah memesan layanan laundry, silahkan cek status laundry disini.",
                           gradient1: Color(0xFFB6E9FF),
                           gradient2: Color(0xFFB6E9FF),
                           textColor: Color.fromARGB(125, 0, 0, 0),

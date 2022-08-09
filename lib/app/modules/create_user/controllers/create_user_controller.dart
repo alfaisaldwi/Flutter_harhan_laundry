@@ -5,11 +5,17 @@ import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class CreateUserController extends GetxController {
+  RxBool isLoading = false.obs;
   TextEditingController namaC = TextEditingController();
+  TextEditingController alamatC = TextEditingController();
+  TextEditingController nomorC = TextEditingController();
   TextEditingController emailC = TextEditingController();
   TextEditingController passwordC = TextEditingController();
 
   FirebaseFirestore firestore = FirebaseFirestore.instance;
+  var isHidden = true.obs;
+
+  void togglePasswordView() => isHidden.value = !isHidden.value;
 
   void createUser() async {
     if (namaC.text.isNotEmpty && emailC.text.isNotEmpty) {
@@ -26,12 +32,16 @@ class CreateUserController extends GetxController {
           await firestore.collection("dataAdmin").doc(uid).set({
             "nama": namaC.text,
             "email": emailC.text,
+            "alamat": alamatC.text,
+            "nohp": nomorC.text,
             "uid": uid,
-            "role": "admin",
+            "role": "user",
             "createdAt": DateTime.now().toIso8601String()
           });
 
           await userCredential.user!.sendEmailVerification();
+          Get.snackbar("Daftar Akun Sukses",
+              "Silahkan Cek Email Verifikasi Kemudian Login");
         }
 
         print(userCredential);

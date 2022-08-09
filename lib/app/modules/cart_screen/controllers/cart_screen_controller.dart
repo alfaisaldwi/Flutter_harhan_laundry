@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class CartLaundryController extends GetxController {
-  //TODO: Implement CartLaundryController
+class CartScreenController extends GetxController {
+  //TODO: Implement CartScreenController
 
   final count = 0.obs;
   @override

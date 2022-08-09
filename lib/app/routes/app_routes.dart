@@ -13,6 +13,12 @@ abstract class Routes {
   static const ORDER_LAUNDRY = _Paths.ORDER_LAUNDRY;
   static const STATUS_LAUNDRY = _Paths.STATUS_LAUNDRY;
   static const CART_LAUNDRY = _Paths.CART_LAUNDRY;
+  static const CATALOG = _Paths.CATALOG;
+  static const CART_SCREEN = _Paths.CART_SCREEN;
+  static const LIST_USER = _Paths.LIST_USER;
+  static const ADMIN_KELOLA_LAUNDRY = _Paths.ADMIN_KELOLA_LAUNDRY;
+  static const ADMIN_KELOLA_PELANGGAN = _Paths.ADMIN_KELOLA_PELANGGAN;
+  static const ADMIN_LAUNDRY_UPDATE = _Paths.ADMIN_LAUNDRY_UPDATE;
 }
 
 abstract class _Paths {
@@ -25,4 +31,10 @@ abstract class _Paths {
   static const ORDER_LAUNDRY = '/order-laundry';
   static const STATUS_LAUNDRY = '/status-laundry';
   static const CART_LAUNDRY = '/cart-laundry';
+  static const CATALOG = '/catalog';
+  static const CART_SCREEN = '/cart-screen';
+  static const LIST_USER = '/list-user';
+  static const ADMIN_KELOLA_LAUNDRY = '/admin-kelola-laundry';
+  static const ADMIN_KELOLA_PELANGGAN = '/admin-kelola-pelanggan';
+  static const ADMIN_LAUNDRY_UPDATE = '/admin-laundry-update';
 }
