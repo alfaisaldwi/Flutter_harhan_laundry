@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
 
+import 'package:harhan_laundry/app/modules/admin_data_transaksi/bindings/admin_data_transaksi_binding.dart';
+import 'package:harhan_laundry/app/modules/admin_data_transaksi/views/admin_data_transaksi_view.dart';
 import 'package:harhan_laundry/app/modules/admin_home/bindings/admin_home_binding.dart';
 import 'package:harhan_laundry/app/modules/admin_home/views/admin_home_view.dart';
 import 'package:harhan_laundry/app/modules/admin_kelola_laundry/bindings/admin_kelola_laundry_binding.dart';
 import 'package:harhan_laundry/app/modules/admin_kelola_laundry/views/admin_kelola_laundry_view.dart';
 import 'package:harhan_laundry/app/modules/admin_kelola_pelanggan/bindings/admin_kelola_pelanggan_binding.dart';
 import 'package:harhan_laundry/app/modules/admin_kelola_pelanggan/views/admin_kelola_pelanggan_view.dart';
-import 'package:harhan_laundry/app/modules/admin_laundry_update/bindings/admin_laundry_update_binding.dart';
-import 'package:harhan_laundry/app/modules/admin_laundry_update/views/admin_laundry_update_view.dart';
 import 'package:harhan_laundry/app/modules/cart_laundry/bindings/cart_laundry_binding.dart';
 import 'package:harhan_laundry/app/modules/cart_laundry/views/cart_laundry_view.dart';
 import 'package:harhan_laundry/app/modules/cart_screen/bindings/cart_screen_binding.dart';
@@ -109,10 +109,11 @@ class AppPages {
       page: () => AdminKelolaPelangganView(),
       binding: AdminKelolaPelangganBinding(),
     ),
+
     GetPage(
-      name: _Paths.ADMIN_LAUNDRY_UPDATE,
-      page: () => AdminLaundryUpdateView(),
-      binding: AdminLaundryUpdateBinding(),
+      name: _Paths.ADMIN_DATA_TRANSAKSI,
+      page: () => AdminDataTransaksiView(),
+      binding: AdminDataTransaksiBinding(),
     ),
   ];
 }

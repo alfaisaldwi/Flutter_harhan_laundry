@@ -44,9 +44,9 @@ class Catalog extends GetView<CartLaundryController> {
           ),
         ),
       ),
-      body: Center(
-        child: SafeArea(
-          child: Flexible(
+      body: Column(
+        children: [
+          Flexible(
             child: ListView.builder(
                 itemCount: Product.products.length,
                 itemBuilder: (context, index) {
@@ -55,7 +55,7 @@ class Catalog extends GetView<CartLaundryController> {
                   );
                 }),
           ),
-        ),
+        ],
       ),
     );
   }
@@ -96,7 +96,7 @@ class CatalogProductCard extends GetView<CartLaundryController> {
           ),
           Expanded(
             child: Text(
-              '\Rp ${Product.products[index].price} k',
+              '\Rp ${Product.products[index].price} ',
               style: const TextStyle(
                 fontSize: 16,
                 color: Colors.black54,
@@ -106,6 +106,11 @@ class CatalogProductCard extends GetView<CartLaundryController> {
           IconButton(
             onPressed: () {
               cController.addProduct(Product.products[index]);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CartScreenView(),
+                  ));
               print(Product.products[index]);
               // Get.snackbar(
               //   'Product Added',

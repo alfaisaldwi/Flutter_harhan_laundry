@@ -92,7 +92,7 @@ class CartProductCard extends GetView<CartLaundryController> {
             height: 20,
           ),
           Text(
-            '\ Rp.${controller.total}',
+            '\ Rp.${controller.total.toString()}',
             style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w600,

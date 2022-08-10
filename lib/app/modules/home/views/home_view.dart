@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:harhan_laundry/app/modules/admin_home/views/admin_home_view.dart';
+import 'package:harhan_laundry/app/modules/home/views/article_view.dart';
+import 'package:harhan_laundry/app/modules/home/views/article_view2.dart';
+import 'package:harhan_laundry/app/modules/home/views/article_view3.dart';
 import 'package:harhan_laundry/app/modules/order_laundry/views/list_product.dart';
 import 'package:harhan_laundry/app/modules/order_laundry/views/order_laundry_view.dart';
 import 'package:harhan_laundry/app/modules/status_laundry/views/status_laundry_view.dart';
@@ -73,23 +76,6 @@ class HomeView extends GetView<HomeController> {
                               ),
                             );
                           }),
-                      // FeatureCard(
-                      //     title: "Cek Sertifikat",
-                      //     text:
-                      //         "Setelah melakukan vaksin , anda dapat cek sertifikat vaksin disini.",
-                      //     gradient1: Color(0xFFB6E9FF),
-                      //     gradient2: Color(0xFFB6E9FF),
-                      //     textColor: Color.fromARGB(125, 0, 0, 0),
-                      //     press: () {
-                      //       Navigator.push(
-                      //         context,
-                      //         MaterialPageRoute(
-                      //           builder: (context) {
-                      //             return CertificateView();
-                      //           },
-                      //         ),
-                      //       );
-                      //     }),
                     ],
                   ),
                 ),
@@ -101,7 +87,7 @@ class HomeView extends GetView<HomeController> {
                       left: 20.0,
                     ),
                     child: Text(
-                      "Seputar Laundry",
+                      "Seputar Harhan Laundry",
                       style: GoogleFonts.poppins(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
@@ -118,32 +104,41 @@ class HomeView extends GetView<HomeController> {
                           InfoCard(
                               title: "Cara melakukan pemesanan laundry?",
                               press: () {
-                                // showModalBottomSheet(
-                                //   shape: const RoundedRectangleBorder(
-                                //     borderRadius: BorderRadius.vertical(
-                                //         top: Radius.circular(40)),
-                                //   ),
-                                //   builder: (context) => ,
-                                //   context: context,
-                                // );
+                                showModalBottomSheet(
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.vertical(
+                                        top: Radius.circular(50)),
+                                  ),
+                                  builder: (context) => ArticleView(),
+                                  context: context,
+                                );
                               }),
                           const SizedBox(width: 5),
                           InfoCard(
-                              title: "Promo laundry",
+                              title: "Costumer Service",
                               press: () {
-                                // showModalBottomSheet(
-                                //   shape: const RoundedRectangleBorder(
-                                //     borderRadius: BorderRadius.vertical(
-                                //         top: Radius.circular(40)),
-                                //   ),
-                                //   builder: (context) => Article2View(),
-                                //   context: context,
-                                // );
+                                showModalBottomSheet(
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.vertical(
+                                        top: Radius.circular(50)),
+                                  ),
+                                  builder: (context) => ArticleView2(),
+                                  context: context,
+                                );
                               }),
                           const SizedBox(width: 5),
-                          InfoCard(title: "Jenis Deterjen ", press: () {}),
-                          const SizedBox(width: 5),
-                          InfoCard(title: "Paket Laundry", press: () {}),
+                          InfoCard(
+                              title: "Alamat Harhan Lauundry ",
+                              press: () {
+                                showModalBottomSheet(
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.vertical(
+                                        top: Radius.circular(50)),
+                                  ),
+                                  builder: (context) => ArticleView3(),
+                                  context: context,
+                                );
+                              }),
                           const SizedBox(width: 5),
                         ]),
                   ),

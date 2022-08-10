@@ -3,8 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:harhan_laundry/app/modules/admin_laundry_update/controllers/admin_laundry_update_controller.dart';
-import 'package:harhan_laundry/app/modules/admin_laundry_update/views/admin_laundry_update_view.dart';
 
 import '../controllers/admin_kelola_laundry_controller.dart';
 

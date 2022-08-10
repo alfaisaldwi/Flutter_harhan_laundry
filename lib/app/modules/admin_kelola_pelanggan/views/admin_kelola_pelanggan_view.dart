@@ -34,7 +34,7 @@ class AdminKelolaPelangganView extends GetView<AdminKelolaPelangganController> {
                       child: Text(
                         'No.',
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: 10,
                           color: Colors.black54,
                         ),
                       ),
@@ -46,7 +46,7 @@ class AdminKelolaPelangganView extends GetView<AdminKelolaPelangganController> {
                       child: Text(
                         'Email',
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: 10,
                           color: Colors.black54,
                         ),
                       ),
@@ -58,7 +58,7 @@ class AdminKelolaPelangganView extends GetView<AdminKelolaPelangganController> {
                       child: Text(
                         'Nama',
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: 10,
                           color: Colors.black54,
                         ),
                       ),
@@ -66,19 +66,27 @@ class AdminKelolaPelangganView extends GetView<AdminKelolaPelangganController> {
                     SizedBox(
                       width: 5,
                     ),
-                    // Expanded(
-                    //   child: Text(
-                    //     'Harga  Total',
-                    //     style: TextStyle(
-                    //       fontSize: 12,
-                    //       color: Colors.black54,
-                    //     ),
-                    //   ),
-                    // ),
+                    Expanded(
+                      child: Text(
+                        'NoHp',
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ),
                     SizedBox(
                       width: 5,
                     ),
-
+                    Expanded(
+                      child: Text(
+                        'Alamat',
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ),
                     SizedBox(
                       width: 5,
                     ),
@@ -107,7 +115,7 @@ class AdminKelolaPelangganView extends GetView<AdminKelolaPelangganController> {
                                       child: Text(
                                         '${i++}',
                                         style: const TextStyle(
-                                          fontSize: 12,
+                                          fontSize: 10,
                                           color: Colors.black54,
                                         ),
                                       ),
@@ -119,7 +127,7 @@ class AdminKelolaPelangganView extends GetView<AdminKelolaPelangganController> {
                                       child: Text(
                                         (e.data() as Map)["email"].toString(),
                                         style: const TextStyle(
-                                          fontSize: 12,
+                                          fontSize: 10,
                                           color: Colors.black54,
                                         ),
                                       ),
@@ -133,24 +141,34 @@ class AdminKelolaPelangganView extends GetView<AdminKelolaPelangganController> {
                                         (e.data() as Map)["nama"].toString(),
                                         style: const TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 12,
+                                          fontSize: 10,
                                         ),
                                       ),
                                     ),
                                     const SizedBox(
                                       width: 5,
                                     ),
-                                    // Expanded(
-                                    //   child: Text(
-                                    //     (e.data() as Map)["checkout"]
-                                    //             ["quantity"]
-                                    //         .toString(),
-                                    //     style: const TextStyle(
-                                    //       fontSize: 12,
-                                    //       color: Colors.black54,
-                                    //     ),
-                                    //   ),
-                                    // ),
+                                    Expanded(
+                                      child: Text(
+                                        (e.data() as Map)["nohp"].toString(),
+                                        style: const TextStyle(
+                                          fontSize: 10,
+                                          color: Colors.black54,
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                    Expanded(
+                                      child: Text(
+                                        (e.data() as Map)["alamat"].toString(),
+                                        style: const TextStyle(
+                                          fontSize: 10,
+                                          color: Colors.black54,
+                                        ),
+                                      ),
+                                    ),
                                     const SizedBox(
                                       width: 5,
                                     ),

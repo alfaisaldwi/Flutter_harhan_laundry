@@ -30,7 +30,7 @@ class CartLaundryController extends GetxController {
         "date": dym,
         "items": product.name,
         "quantity": _product[product],
-        "price": productSubTotal,
+        "price": product.price.toDouble(),
         "status": "Belum diproses"
       });
     } else {
@@ -47,7 +47,7 @@ class CartLaundryController extends GetxController {
           "date": dym,
           "items": product.name,
           "quantity": _product[product],
-          "price": productSubTotal,
+          "price": product.price.toDouble(),
           "status": "Belum diproses"
         });
       } else {
@@ -58,7 +58,7 @@ class CartLaundryController extends GetxController {
           "date": dym,
           "items": product.name,
           "quantity": _product[product],
-          "price": total,
+          "price": product.price.toDouble(),
           "status": "Belum diproses"
         });
       }

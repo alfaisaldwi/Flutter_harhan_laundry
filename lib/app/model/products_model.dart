@@ -18,78 +18,65 @@ class Product {
     Product(
         id: 1,
         name: 'Travel Bag',
-        price: 50,
+        price: 50000,
         image: 'assets/image/bag_treatment/travel_bag.png'),
     Product(
         id: 2,
         name: 'Mountain Bag',
-        price: 75,
+        price: 75000,
         image: 'assets/image/bag_treatment/mountain.png'),
     Product(
         id: 3,
         name: 'Backpack Bag',
-        price: 30,
+        price: 30000,
         image: 'assets/image/bag_treatment/backpack.png'),
     Product(
         id: 4,
         name: 'Kids Bag',
-        price: 15,
+        price: 15000,
         image: 'assets/image/bag_treatment/kids.png'),
     Product(
         id: 5,
         name: 'Clutch',
-        price: 20,
+        price: 20000,
         image: 'assets/image/bag_treatment/clutch.png'),
     Product(
         id: 6,
         name: 'Wallet Canvas',
-        price: 10,
+        price: 10000,
         image: 'assets/image/bag_treatment/wallet_canvas.png'),
     Product(
         id: 7,
         name: 'Wallet Leather',
-        price: 15,
+        price: 15000,
         image: 'assets/image/bag_treatment/wallet_leather.png'),
     Product(
         id: 8,
         name: 'Diaper Bag',
-        price: 45,
+        price: 45000,
         image: 'assets/image/bag_treatment/deaper.png'),
     Product(
         id: 9,
         name: 'Cap',
-        price: 20,
+        price: 20000,
         image: 'assets/image/bag_treatment/cap.png'),
     Product(
         id: 10,
-        name: 'Man Sandals Express',
-        price: 40,
+        name: 'Man Sandals',
+        price: 40000,
         image: 'assets/image/sandal/mans_sandal.png'),
-    Product(
-        id: 11,
-        name: 'Man Sandals Regular',
-        price: 20,
-        image: 'assets/image/sandal/mans_sandal.png'),
-    Product(
-        id: 12,
-        name: 'Woman Sandals Express',
-        price: 45,
-        image: 'assets/image/sandal/women.png'),
+    
     Product(
         id: 13,
-        name: 'Woman Sandals Regular',
-        price: 25,
+        name: 'Woman Sandals',
+        price: 25000,
         image: 'assets/image/sandal/women.png'),
     Product(
         id: 14,
-        name: 'Kids Sandals Express',
-        price: 25,
+        name: 'Kids Sandals',
+        price: 25000,
         image: 'assets/image/sandal/kids.png'),
-    Product(
-        id: 15,
-        name: 'Kids Sandal Regular',
-        price: 15,
-        image: 'assets/image/sandal/kids.png'),
+    
   ];
 
   // static Product fromSnapshot(DocumentSnapshot snap) {
