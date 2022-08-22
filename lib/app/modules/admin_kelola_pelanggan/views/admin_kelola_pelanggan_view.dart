@@ -12,6 +12,7 @@ class AdminKelolaPelangganView extends GetView<AdminKelolaPelangganController> {
   @override
   Widget build(BuildContext context) {
     String uid = auth.currentUser!.uid;
+    final cPW = Get.put(AdminKelolaPelangganController());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
@@ -23,165 +24,42 @@ class AdminKelolaPelangganView extends GetView<AdminKelolaPelangganController> {
           ),
         ),
       ),
-      body: Center(
-        child: SafeArea(
-          child: Column(
-            children: [
-              Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
-                    Expanded(
-                      child: Text(
-                        'No.',
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Colors.black54,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Expanded(
-                      child: Text(
-                        'Email',
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Colors.black54,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Expanded(
-                      child: Text(
-                        'Nama',
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Colors.black54,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Expanded(
-                      child: Text(
-                        'NoHp',
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Colors.black54,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Expanded(
-                      child: Text(
-                        'Alamat',
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Colors.black54,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                  ]),
-              Flexible(
-                child: FutureBuilder<QuerySnapshot>(
-                    future: FirebaseFirestore.instance
-                        .collection("dataAdmin")
-                        .get(),
-                    builder: (context, snapshot) {
-                      if (!snapshot.hasData) {
-                        return CircularProgressIndicator();
-                      }
+      body: StreamBuilder(
+        stream: cPW.getUsers.snapshots(),
+        builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+          if (streamSnapshot.hasData) {
+            return ListView.builder(
+                itemCount: streamSnapshot.data!.docs.length,
+                itemBuilder: (context, index) {
+                  final DocumentSnapshot documentSnapshot =
+                      streamSnapshot.data!.docs[index];
 
-                      return ListView(
-                        children: snapshot.data!.docs.map((e) {
-                          return Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 5.0, vertical: 5.0),
-                              child: Column(children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        '${i++}',
-                                        style: const TextStyle(
-                                          fontSize: 10,
-                                          color: Colors.black54,
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 5,
-                                    ),
-                                    Expanded(
-                                      child: Text(
-                                        (e.data() as Map)["email"].toString(),
-                                        style: const TextStyle(
-                                          fontSize: 10,
-                                          color: Colors.black54,
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 5,
-                                    ),
-                                    Expanded(
-                                      flex: 2,
-                                      child: Text(
-                                        (e.data() as Map)["nama"].toString(),
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 10,
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 5,
-                                    ),
-                                    Expanded(
-                                      child: Text(
-                                        (e.data() as Map)["nohp"].toString(),
-                                        style: const TextStyle(
-                                          fontSize: 10,
-                                          color: Colors.black54,
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 5,
-                                    ),
-                                    Expanded(
-                                      child: Text(
-                                        (e.data() as Map)["alamat"].toString(),
-                                        style: const TextStyle(
-                                          fontSize: 10,
-                                          color: Colors.black54,
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 5,
-                                    ),
-                                  ],
-                                ),
-                              ]));
-                        }).toList(),
-                      );
-                    }),
-              ),
-            ],
-          ),
-        ),
+                  return Card(
+                    margin: const EdgeInsets.all(10),
+                    
+                    child: ListTile(
+                      title: Text(
+                          '${documentSnapshot['nama']} || ${documentSnapshot['email']}'),
+                      subtitle: Text(
+                          ' ${documentSnapshot['nohp']} || ${documentSnapshot['alamat']}',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      trailing: SizedBox(
+                        width: 100,
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                  icon: Icon(Icons.delete),
+                                  onPressed: () =>
+                                      cPW.deleteUsers(documentSnapshot.id))
+                            ]),
+                      ),
+                    ),
+                  );
+                });
+          }
+          return CircularProgressIndicator();
+        },
       ),
     );
   }

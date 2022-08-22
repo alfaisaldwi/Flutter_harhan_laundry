@@ -124,7 +124,7 @@ class AdminKelolaLaundryView extends GetView<AdminKelolaLaundryController> {
                         subtitle: Text(
                             ' ${documentSnapshot['nameUid']}|| ${documentSnapshot['status']}'),
                         trailing: SizedBox(
-                          width: 50,
+                          width: 100,
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -132,6 +132,10 @@ class AdminKelolaLaundryView extends GetView<AdminKelolaLaundryController> {
                                     icon: Icon(Icons.edit),
                                     onPressed: () =>
                                         cPW.updateStatus(documentSnapshot)),
+                                IconButton(
+                                    icon: Icon(Icons.delete),
+                                    onPressed: () =>
+                                        cPW.deleteLaundry(documentSnapshot.id))
                               ]),
                         ),
                       ),

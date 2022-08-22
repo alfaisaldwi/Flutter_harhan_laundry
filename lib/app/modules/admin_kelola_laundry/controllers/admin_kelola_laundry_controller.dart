@@ -50,6 +50,14 @@ class AdminKelolaLaundryController extends GetxController {
         });
   }
 
+  Future<void> deleteLaundry(String dataPesananID) async {
+    await getPesanan.doc(dataPesananID).delete();
+
+    ScaffoldMessenger.of(Get.context!).showSnackBar(const SnackBar(
+      content: Text('Berhasil Menghapus'),
+    ));
+  }
+
   Stream<List<Pemesanan>> getAllPemesanan() {
     return _firebaseFirestore
         .collection('dataAdmin')
