@@ -30,9 +30,10 @@ class CartLaundryController extends GetxController {
         "date": dym,
         "items": product.name,
         "quantity": _product[product],
-        "price": product.price.toDouble(),
+        "price": total,
         "status": "Belum diproses"
       });
+      _product.remove(product);
     } else {
       DocumentSnapshot<Map<String, dynamic>> todayDoc =
           await colPesanan.doc().get();
@@ -83,7 +84,7 @@ class CartLaundryController extends GetxController {
   get total => _product.entries
       .map((product) => product.key.price * product.value)
       .toList()
-      .reduce((value, element) => value * element)
+      .reduce((value, element) => value + element)
       .toStringAsFixed(2);
 
   void removeProduct(Product product) {
@@ -92,5 +93,9 @@ class CartLaundryController extends GetxController {
     } else {
       _product[product] -= 1;
     }
+  }
+
+  void deleteAllProduct(Product product) {
+    _product.clear;
   }
 }

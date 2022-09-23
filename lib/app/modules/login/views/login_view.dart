@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:harhan_laundry/app/modules/create_user/controllers/create_user_controller.dart';
+import 'package:harhan_laundry/app/modules/forget_password/views/forget_password_view.dart';
+import 'package:harhan_laundry/app/modules/home/views/article_view2.dart';
+import 'package:harhan_laundry/app/modules/home/views/article_view3.dart';
 
 import '../../../routes/app_pages.dart';
 import '../controllers/login_controller.dart';
@@ -102,7 +105,19 @@ class LoginView extends GetView<LoginController> {
                 ),
                 Container(
                     alignment: Alignment.topRight,
-                    child: const Text('Lupa Password ?')),
+                    child: GestureDetector(
+                      child: const Text('Lupa Password ?'),
+                      onTap: () {
+                        showModalBottomSheet(
+                          shape: const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.vertical(top: Radius.circular(50)),
+                          ),
+                          builder: (context) => ArticleView2(),
+                          context: context,
+                        );
+                      },
+                    )),
                 const SizedBox(
                   height: 40,
                 ),

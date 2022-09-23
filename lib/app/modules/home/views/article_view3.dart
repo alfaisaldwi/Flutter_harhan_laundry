@@ -26,7 +26,7 @@ class ArticleView3 extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                    'Perumahan Griya TTaman Suci B5 No.11, Suci, Kecamatan Mundu, Cirebon 45173'),
+                    'Perumahan Griya Taman Suci B5 No.11, Suci, Kecamatan Mundu, Cirebon 45173'),
                 SizedBox(
                   height: 5,
                 ),

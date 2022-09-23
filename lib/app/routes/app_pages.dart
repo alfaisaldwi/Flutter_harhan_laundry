@@ -16,6 +16,8 @@ import 'package:harhan_laundry/app/modules/catalog/bindings/catalog_binding.dart
 import 'package:harhan_laundry/app/modules/catalog/views/catalog_view.dart';
 import 'package:harhan_laundry/app/modules/create_user/bindings/create_user_binding.dart';
 import 'package:harhan_laundry/app/modules/create_user/views/create_user_view.dart';
+import 'package:harhan_laundry/app/modules/forget_password/bindings/forget_password_binding.dart';
+import 'package:harhan_laundry/app/modules/forget_password/views/forget_password_view.dart';
 import 'package:harhan_laundry/app/modules/home/bindings/home_binding.dart';
 import 'package:harhan_laundry/app/modules/home/views/home_view.dart';
 import 'package:harhan_laundry/app/modules/list_user/bindings/list_user_binding.dart';
@@ -28,8 +30,6 @@ import 'package:harhan_laundry/app/modules/profile/bindings/profile_binding.dart
 import 'package:harhan_laundry/app/modules/profile/views/profile_view.dart';
 import 'package:harhan_laundry/app/modules/status_laundry/bindings/status_laundry_binding.dart';
 import 'package:harhan_laundry/app/modules/status_laundry/views/status_laundry_view.dart';
-import 'package:harhan_laundry/app/modules/user_home/bindings/user_home_binding.dart';
-import 'package:harhan_laundry/app/modules/user_home/views/user_home_view.dart';
 
 part 'app_routes.dart';
 
@@ -58,11 +58,6 @@ class AppPages {
       name: _Paths.ADMIN_HOME,
       page: () => AdminHomeView(),
       binding: AdminHomeBinding(),
-    ),
-    GetPage(
-      name: _Paths.USER_HOME,
-      page: () => UserHomeView(),
-      binding: UserHomeBinding(),
     ),
     GetPage(
       name: _Paths.PROFILE,
@@ -114,6 +109,11 @@ class AppPages {
       name: _Paths.ADMIN_DATA_TRANSAKSI,
       page: () => AdminDataTransaksiView(),
       binding: AdminDataTransaksiBinding(),
+    ),
+    GetPage(
+      name: _Paths.FORGET_PASSWORD,
+      page: () => ForgetPasswordView(),
+      binding: ForgetPasswordBinding(),
     ),
   ];
 }

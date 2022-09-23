@@ -20,6 +20,7 @@ abstract class Routes {
   static const ADMIN_KELOLA_PELANGGAN = _Paths.ADMIN_KELOLA_PELANGGAN;
   static const ADMIN_LAUNDRY_UPDATE = _Paths.ADMIN_LAUNDRY_UPDATE;
   static const ADMIN_DATA_TRANSAKSI = _Paths.ADMIN_DATA_TRANSAKSI;
+  static const FORGET_PASSWORD = _Paths.FORGET_PASSWORD;
 }
 
 abstract class _Paths {
@@ -39,4 +40,5 @@ abstract class _Paths {
   static const ADMIN_KELOLA_PELANGGAN = '/admin-kelola-pelanggan';
   static const ADMIN_LAUNDRY_UPDATE = '/admin-laundry-update';
   static const ADMIN_DATA_TRANSAKSI = '/admin-data-transaksi';
+  static const FORGET_PASSWORD = '/forget-password';
 }

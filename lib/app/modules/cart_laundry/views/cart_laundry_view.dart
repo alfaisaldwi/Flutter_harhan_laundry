@@ -105,10 +105,9 @@ class CartProductCard extends GetView<CartLaundryController> {
             onPressed: () async {
               await controller.pesanan(product);
               print(product);
-              controller.removeProduct(product);
               Get.snackbar("Berhasil", "Kamu telah mencheckout items");
               Get.toNamed(Routes.STATUS_LAUNDRY);
-              // controller.deleteAllProducts();
+              // controller.deleteAllProduct(product);
             },
             child: const Text('Checkout'),
           ),

@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:harhan_laundry/app/modules/login/views/login_view.dart';
 
 class CreateUserController extends GetxController {
   RxBool isLoading = false.obs;
@@ -42,6 +44,12 @@ class CreateUserController extends GetxController {
           await userCredential.user!.sendEmailVerification();
           Get.snackbar("Daftar Akun Sukses",
               "Silahkan Cek Email Verifikasi Kemudian Login");
+
+          Navigator.push(
+              Get.context!,
+              MaterialPageRoute(
+                builder: (context) => LoginView(),
+              ));
         }
 
         print(userCredential);
