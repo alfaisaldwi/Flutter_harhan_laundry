@@ -1,12 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:harhan_laundry/app/model/pemesanan_model.dart';
+import 'package:harhan_laundry/app/model/products_model.dart';
 
 class AdminKelolaLaundryController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
   TextEditingController statusL = TextEditingController();
+  // AdminKelolaLaundryController controller = AdminKelolaLaundryController();
+
+  ///
+
+  var selectedDrowpdown = '';
 
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
   final pemesanan = <Pemesanan>[].obs;
@@ -31,16 +38,41 @@ class AdminKelolaLaundryController extends GetxController {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TextField(
-                    controller: statusL,
-                    decoration: const InputDecoration(labelText: 'Status'),
+                  DropdownSearch<String>(
+                    popupProps: PopupProps.menu(
+                      showSelectedItems: true,
+                      disabledItemFn: (String s) => s.startsWith('I'),
+                    ),
+                    items: [
+                      "Belum diproses",
+                      "Barang Sedang diambil ke Alamat",
+                      "Barang sudah diterima dan akan diproses",
+                      'Sedang diproses',
+                      'Barang dikirim ke alamat',
+                      'Laundry selesai'
+                    ],
+                    dropdownDecoratorProps: DropDownDecoratorProps(
+                      dropdownSearchDecoration: InputDecoration(
+                        labelText: "Menu mode",
+                        hintText: "country in menu mode",
+                      ),
+                    ),
+                    onChanged: (value) {
+                      selectedDrowpdown = value!;
+                    },
+                    // (ubahStatus(documentSnapshot!.id)),
+                    selectedItem: "${statusL.text}",
                   ),
+                  // TextField(
+                  //   controller: statusL,
+                  //   decoration: const InputDecoration(labelText: 'Status'),
+                  // ),
                   ElevatedButton(
                     child: const Text('Ubah Status'),
                     onPressed: () async {
-                      final String status = statusL.text;
+                      final String status = selectedDrowpdown;
                       await getPesanan
-                          .doc(documentSnapshot!.id)
+                          .doc(documentSnapshot?.id)
                           .update({"status": status});
                       Navigator.pop(ctx);
                     },
@@ -48,6 +80,10 @@ class AdminKelolaLaundryController extends GetxController {
                 ]),
           );
         });
+  }
+
+  void ubahStatus([DocumentSnapshot? documentSnapshot]) async {
+    await getPesanan.doc(documentSnapshot?.id).update({"status": statusL});
   }
 
   Future<void> deleteLaundry(String dataPesananID) async {
